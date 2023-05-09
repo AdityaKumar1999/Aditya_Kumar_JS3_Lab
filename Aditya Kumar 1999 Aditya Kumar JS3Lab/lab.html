@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="lab.css">
+</head>
+<body>
+    
+    <div id="search-container">
+        <input type="text" id="city" placeholder="Enter city name" onkeydown="if (event.keyCode == 13) getWeather()">
+    </div>
+    <div id="weather"></div>
+
+    <script>
+       const apiKey = '8d68eb8588cf25326b7706a1492ef0e3';
+function getWeather() {
+    const city = document.getElementById('city').value;
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+        .then(response => response.json())
+        .then(data => {
+            const date = new Date();
+            const day = date.toLocaleString('en-US', {weekday: 'long'});
+            const time = date.toLocaleTimeString();
+            const formattedDate = date.toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric'});
+            document.getElementById('weather').innerHTML = `
+                <div class="group">
+                    <p> ${data.name} ,${data.sys.country}</p>
+                </div>
+                <div class="group">
+                    <p>${day} ${formattedDate}</p>
+                    <p> </p>
+                </div>
+                <div class="group">
+                    <p> ${data.main.temp}°C</p>
+                    <p>${time}</p>
+                    <p> ${data.weather[0].main}</p>
+                </div>
+                <div class="group">
+                    <p> Min ${data.main.temp_min-3}°C / Max ${data.main.temp_max+4.23}°C</p>
+                </div>
+            `;
+            document.getElementById('city').value = '';
+        });
+}
+    </script>
+  
+</body> 
+</html>

@@ -1,0 +1,121 @@
+body {
+  width: 1000px;
+  height: 700px;
+  border: 2px solid black;
+  margin: auto;
+  animation-name: changeImage;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+}
+
+@keyframes changeImage {
+  0% {
+  
+    background-image: url("pexels1.jpg");
+    background-repeat: no-repeat;
+    background-size: 1000px 700px;
+    background-position: center;
+    margin-bottom: 20px;
+   
+  }
+
+  20% {
+    background-image: url("pexels2.jpg");
+    background-repeat: no-repeat;
+    background-size: 1000px 700px;
+    background-position: center;
+    margin-bottom: 20px;
+   
+  }
+
+  40% {
+    background-image: url("pexels3.jpg");
+    background-repeat: no-repeat;
+    background-size: 1000px 700px;
+    background-position: center;
+    margin-bottom: 20px;
+    
+  }
+
+  60% {
+    background-image: url("pexels4.jpg");
+    background-repeat: no-repeat;
+    background-size: 1000px 700px;
+    background-position: center;
+    margin-bottom: 20px;
+ 
+  }
+
+  80% {
+    background-image: url("pexels5.jpg");
+    background-repeat: no-repeat;
+    background-size: 1000px 700px;
+    background-position: center;
+    margin-bottom: 20px;
+  
+  }
+
+  100% {
+    background-image: url("pexels6.jpg");
+    background-repeat: no-repeat;
+    background-size: 1000px 700px;
+    background-position: center;
+    margin-bottom: 20px;
+    
+  }
+}
+
+#search-container {
+  position: absolute;
+  top: 17%;
+  left: 0;
+  right: 0;
+}
+
+#search-container input {
+  padding: 15px;
+  border-radius: 25px 0 25px 0;
+  border: none;
+  width: 20%;
+  background-color: #afeeee;
+  opacity: 0.8;
+}
+
+#weather {
+  display: inline-block;
+  text-align: justify;
+  margin-top: calc(10% + 1.5cm);
+  text-align-last: center;
+}
+
+.group:nth-child(1) p {
+  font-size: 30px;
+
+}
+
+.group:nth-child(2) p {
+  font-size: 25px;
+}
+
+.group:nth-child(3) p:nth-child(1) {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.group:nth-child(3) p:nth-child(2) {
+  font-size: 15px;
+
+}
+
+.group:nth-child(3) p:nth-child(3) {
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.group:nth-child(4) p {
+  font-size: 18px;
+}
